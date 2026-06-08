@@ -1,18 +1,16 @@
+// Online C compiler to run C program online
 #include <stdio.h>
 
 int main() {
-    int a, b, temp;
-
-    printf("Enter two numbers: ");
-    scanf("%d %d", &a, &b);
-
-    while (b != 0) {
-        temp = b;
-        b = a % b;
-        a = temp;
+    int a,b, i;
+    printf("enter two number:");
+    scanf("%d and %d",&a,&b);
+    for(i=1;i<=a*b;i++){
+        if(i%a==0 && i%b==0) {
+            printf("LCM is %d",i);
+            break;
+        }
     }
-
-    printf("GCD = %d\n", a);
 
     return 0;
 }
