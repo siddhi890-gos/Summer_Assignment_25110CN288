@@ -1,18 +1,17 @@
-#include <stdio.h>
+// Online C compiler to run C pro#include <stdio.h>
 
 int main() {
-    int a, b, temp;
+    int a, b, i,gcd;
 
     printf("Enter two numbers: ");
     scanf("%d %d", &a, &b);
 
-    while (b != 0) {
-        temp = b;
-        b = a % b;
-        a = temp;
-    }
+     for(i=1; i<=a&&i<=b ;i++) {
+        if(a%i==0&&b%i==0)
+        gcd=i;
+     }
 
-    printf("GCD = %d\n", a);
+    printf("GCD of %d and %d is %d:", a,b,gcd);
 
     return 0;
 }
