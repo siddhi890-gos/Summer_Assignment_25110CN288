@@ -1,15 +1,23 @@
 #include <stdio.h>
 
 int main() {
-    int num;
+    int num, original, reverse = 0, remainder;
 
     printf("Enter a number: ");
     scanf("%d", &num);
 
-    if (num % 2 == 0)
-        printf("%d is an Even number.", num);
+    original = num;
+
+    while (num != 0) {
+        remainder = num % 10;
+        reverse = reverse * 10 + remainder;
+        num = num / 10;
+    }
+
+    if (original == reverse)
+        printf("%d is a Palindrome Number.", original);
     else
-        printf("%d is an Odd number.", num);
+        printf("%d is not a Palindrome Number.", original);
 
     return 0;
 }
