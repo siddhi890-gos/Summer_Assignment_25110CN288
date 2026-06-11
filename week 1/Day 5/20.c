@@ -1,27 +1,29 @@
-#include <stdio.h>
+#include <iostream>
+using namespace std;
 
 int main() {
-    long long n, largestFactor = -1;
+    long long n;
+    cout << "Enter a number: ";
+    cin >> n;
 
-    printf("Enter a number: ");
-    scanf("%lld", &n);
+    long long largestPrimeFactor = 0;
 
     while (n % 2 == 0) {
-        largestFactor = 2;
+        largestPrimeFactor = 2;
         n /= 2;
     }
 
     for (long long i = 3; i * i <= n; i += 2) {
         while (n % i == 0) {
-            largestFactor = i;
+            largestPrimeFactor = i;
             n /= i;
         }
     }
 
     if (n > 2)
-        largestFactor = n;
+        largestPrimeFactor = n;
 
-    printf("Largest Prime Factor = %lld\n", largestFactor);
+    cout << "Largest Prime Factor = " << largestPrimeFactor;
 
     return 0;
 }
